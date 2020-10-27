@@ -1,0 +1,14 @@
+--- Windows
+
+gcc -o .\libutils.dll -shared -fPIC -O3 .\utils_cryptor.c
+gcc -o .\test .\test.c .\libutils.dll
+
+pyinstaller.exe --key 0C88P7AQA2RCK9OP --clean -F --add-binary "Y:\esp\bin_gen_tool\libutils.dll;." .\qcloud_iot_bin_tool_win.py
+
+
+--- Linux
+
+gcc -o libutils.so -shared -fPIC -O3 utils_cryptor.c
+gcc -o test test.c libutils.so
+
+pyinstaller --key 0C88P7AQA2RCK9OP --clean -F --add-binary /opt/esp/bin_gen_tool/libutils.so:. qcloud_iot_bin_tool_linux.py

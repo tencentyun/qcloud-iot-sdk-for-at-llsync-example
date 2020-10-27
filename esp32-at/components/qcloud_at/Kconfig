@@ -1,0 +1,8 @@
+menu "QCloud IoT"
+config AT_QCLOUD_IOT_COMMAND_SUPPORT
+
+    bool "AT QCloud IoT command support."
+    default "y"
+    depends on AT_ENABLE
+
+endmenu # wolfSSL
